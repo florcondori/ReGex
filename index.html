@@ -8,13 +8,8 @@
 	<div class="div-form">
 		<form id="form-registro">
 			<div>
-				<label for="nombre">Nombre:</label>
-				<input id="nombre" type="text">
-				<span></span>
-			</div>
-			<div>
-				<label for="apellido">Apellido:</label>
-				<input id="apellido" type="text">
+				<label for="nombre-apellido">Nombre y Apellido:</label>
+				<input id="nombre-apellido" type="text" pattern="/([A-Z]{1}[a-z]{2,}\s?){2,}/" required="">
 				<span></span>
 			</div>
 			<div>
@@ -56,7 +51,7 @@
 				<input type="checkbox">
 	            <label>Terminos y condiciones</label>
 	            <span></span>
-			</div>													<button id="enviar">enviar</button>
+			</div>
 		</form>
 	</div>
 	<script src="assets/js/app.js"></script>
