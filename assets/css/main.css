@@ -1,1 +1,10 @@
-main
+span{
+	color: red;
+}
+label{
+	width: 155px;
+	display: inline-block;
+}
+.div-input{
+	margin-bottom: 10px;
+}

@@ -3,55 +3,57 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Expresiones Regulares</title>
+	<link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body>
 	<div class="div-form">
 		<form id="form-registro">
-			<div>
+			<div class="div-input">
 				<label for="nombre-apellido">Nombre y Apellido:</label>
-				<input id="nombre-apellido" type="text" pattern="/([A-Z]{1}[a-z]{2,}\s?){2,}/" required="">
+				<input id="nombre-apellido" type="text">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="DNI">DNI:</label>
 				<input id="dni" type="text">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="fecha-nac">Fecha Nac:</label>
-				<input id="fecha-nac" type="text">
+				<input id="fecha-nac" type="date">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="celular">Celular:</label>
 				<input id="celular" type="text">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="telefono">Telf. Casa:</label>
 				<input id="telefono" type="text">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="password">Contraseña:</label>
 				<input id="password" type="text">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="confirmar-pass">Confirmar contraseña:</label>
 				<input id="confirmar-pass" type="text">
 				<span></span>
 			</div>
-			<div>
+			<div class="div-input">
 				<label for="comentario">Comentario:</label>
 				<textarea name="" id="comentario" cols="30" rows="10"></textarea>
 				<span></span>
 			</div>
-			<div>
-				<input type="checkbox">
+			<div class="div-input">
+				<input type="checkbox" id="check">
 	            <label>Terminos y condiciones</label>
 	            <span></span>
 			</div>
+			<button id="enviar">Enviar</button>
 		</form>
 	</div>
 	<script src="assets/js/app.js"></script>
