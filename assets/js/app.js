@@ -9,31 +9,6 @@ window.addEventListener("load", function(){
 	var comentario = document.getElementById("comentario");
 	var check = document.getElementById("check");
 
-	/*nombre.onkeydown = function(e){
-		if(e.keyCode == 13){
-			if(/([A-Z])\w++/.test(this.value)){
-				this.nextElementSibling.innerText = "";
-			}else{
-				this.nextElementSibling.innerText = "La primera letra en mayuscula";	
-			}
-		}
-	}
-	nombre.addEventListener("blur", function(){
-		if(/(^[A-Z][a-z]{2,}\s)+/.test(this.value)){
-			this.nextElementSibling.innerText = "";
-		}else{
-			this.nextElementSibling.innerText = "La primera letra en mayuscula";	
-		}
-	});
-
-	dni.addEventListener("blur", function(){
-		if(/^[0-9]{9}$/.test(dni.value)){
-			this.nextElementSibling.innerText = "";
-		}else{
-			this.nextElementSibling.innerText = "DNI debe tener 9 digitos";
-		}
-	});*/
-
 	var btn = document.getElementById("enviar");
 	btn.addEventListener("click", function(e){
 		e.preventDefault();
@@ -44,7 +19,7 @@ window.addEventListener("load", function(){
 				nombre.nextElementSibling.innerText = "La primera letra en mayuscula";	
 			}
 			//Validar campo DNI
-			if(/^[0-9]{9}$/.test(dni.value)){
+			if(/^[0-9]{8}$/.test(dni.value)){
 				dni.nextElementSibling.innerText = "";
 			}else{
 				dni.nextElementSibling.innerText = "DNI debe tener 9 digitos";
@@ -58,7 +33,11 @@ window.addEventListener("load", function(){
 				var diaActual = fecha.getDate();
 				var mesActual = fecha.getMonth()+1;
 				var añoActual = fecha.getFullYear();
-					if(añoActual-arrayNac[2]>=18){
+					if(añoActual-arrayNac[2]>18){
+						fechaNac.nextElementSibling.innerText = "";
+					}
+
+					if(añoActual-arrayNac[2]==18){
 						fechaNac.nextElementSibling.innerText = "";
 						if(mesActual>=arrayNac[1]){
 							fechaNac.nextElementSibling.innerText = "";
@@ -70,7 +49,9 @@ window.addEventListener("load", function(){
 						}else{
 							fechaNac.nextElementSibling.innerText = "Te falta algunos meses para ser mayor de edad";
 						}
-					}else{
+					}
+
+					if(añoActual-arrayNac[2]<18){
 						fechaNac.nextElementSibling.innerText = "Te falta algunos años para ser mayor de edad";
 					}
 			}else{
@@ -83,10 +64,10 @@ window.addEventListener("load", function(){
 				celular.nextElementSibling.innerText = "Celular tiene 9 digitos";
 			}
 			//Validar campo telefono de casa
-			if(/[1-8]{3}(\-|)[1-8]{4}/.test(telefono.value)){
+			if(/^[1-9]{7}$/.test(telefono.value)){
 				telefono.nextElementSibling.innerText = "";
 			}else{
-				telefono.nextElementSibling.innerText = "Telefono Fijo 7 digitos";
+				telefono.nextElementSibling.innerText = "Telefono 7 digitos";
 			}
 			//validar password
 			if(password.value.trim().length != 0){
